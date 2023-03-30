@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta charset="UTF-8">
+			<link rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body>
+	
+		<audio id="audio" loop="loop" autoplay></audio>
+		
+		<div id="upperTab">
+			GAME-NAME
+		</div>
+		
+	
+		<div class="centerIt">
+			<div id="main">
+
+						<div id="score"><!--hahah bwo--></div>
+							
+							<div id="game_menu" class="hide">
+								<div class="title_of_setting"> 
+									Menu
+								</div>
+								<div class="menu_of_setting">
+									<div class="close_button">
+										<button class="close_button_css" onclick="close_setting()"></button>
+									</div>
+
+								</div>
+							</div>
+
+							<div id="game_level" class="hide">
+								<div class="title_of_setting"> 
+									Levels
+								</div>
+								<div class="level_of_setting">
+									<div class="close_button">
+										<button class="close_button_css" onclick="close_setting()"></button>
+									</div>
+
+								</div>
+							</div>
+						
+							<div id="game_setting" class="hide">
+								<div class="title_of_setting">								
+									Settings
+								</div>
+								<div class="setting_of_setting">
+									<div class="close_button">
+										<button class="close_button_css" onclick="close_setting()"></button>
+									</div>
+									
+									<div class="title_of_setting_flex">
+										<div class="both_sides_title"></div>
+										<div class="title_for_type_setting"> Sound settings:</div>
+										<div class="both_sides_title"><button id="iArrowSound" class="arrow arrow_down" onclick="open_sound('sound')"></button></div>
+									</div>
+									
+									<div id="sound" class="sound_closed">
+										<div id="mute" class="cSound cSound_first">
+											<div class="cSound_setting_split cSound_setting_split_left">
+												Music:
+											</div>
+											<div class="cSound_setting_split cSound_setting_split_right">	
+												<button onclick="mute_play_song(volume.value)" id="mute_music" class="setting_icons_button cMute_music_play"></button>
+											</div>
+										</div>	
+										<div id="volume" class="cSound cSound_second">
+											<div class="cSound_setting_split cSound_setting_split_left">
+												Volume:
+											</div>
+											<div class="cSound_setting_split cSound_setting_split_right">	
+												<input oninput="volume_show.value=value" class="slider_css" type="range" min="0" max="100" value="100" onchange="volume_change(this.value)" id="volume">  
+												<!--	<p id="volume_show">100</p> -->
+												<output id="volume_show">100</output>
+												<!--  <button id="volume_music" class="setting_icons_button"></button> -->
+											</div>
+										</div>										
+									</div>
+									<div class="title_of_setting_flex">
+										<div class="both_sides_title"></div>
+										<div class="title_for_type_setting"> Controls:</div>
+										<div class="both_sides_title"><button id="iArrowKeybinds" class="arrow arrow_down" onclick="open_keybinds('keybinds')"></button></div>
+									</div>
+									<div id="keybinds" class="keybinds_closed">
+										<div id="moveUp" class="split_keybinds_onFour">
+											<div class="keybinds_split keybinds_split_left">
+												Move up:
+											</div>
+											<div class="keybinds_split keybinds_split_right">
+												<div class="keyHover" id="keyPress_up" onclick="changeButtonUp()">
+													UP
+												</div>
+											</div>
+										</div>
+										<div id="moveDown" class="split_keybinds_onFour">
+											<div class="keybinds_split keybinds_split_left">
+												Move down:
+											</div>
+											<div class="keybinds_split keybinds_split_right">
+												<div class="keyHover" id="keyPress_down" onclick="changeButtonDown()">
+													DOWN
+												</div>
+											</div>
+										</div>
+										<div id="moveRight" class="split_keybinds_onFour">
+											<div class="keybinds_split keybinds_split_left">
+												Move right:
+											</div>
+											<div class="keybinds_split keybinds_split_right">
+												<div class="keyHover" id="keyPress_right" onclick="changeButtonRight()">
+													RIGHT
+												</div>
+											</div>
+										</div>
+										<div id="moveLeft" class="split_keybinds_onFour">
+											<div class="keybinds_split keybinds_split_left">
+												Move left:
+											</div>
+											<div class="keybinds_split keybinds_split_right">
+												<div class="keyHover" id="keyPress_left" onclick="changeButtonLeft()">
+													LEFT
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+
+								</div>
+							</div>
+							
+							<div id="game_info" class="hide">
+								<div class="title_of_setting"> 
+									Info
+								</div>
+								<div class="info_of_setting">
+									<div class="close_button">
+										<button class="close_button_css" onclick="close_setting()"></button>
+									</div>
+
+								</div>
+							</div>
+
+							<div id="game_exit" class="hide">
+								<div class="title_of_setting"> 
+									Already leaving?
+								</div>
+								<div class="exit_of_setting">
+									<div class="close_button">
+										<button class="close_button_css" onclick="close_setting()"></button>
+									</div>
+
+								</div>
+							</div>
+
+						
+
+
+						<div id="game" class="show">
+							<canvas id="canvas"  height="500px" width="500px"></canvas>
+						</div>
+						<div id="settings">
+							<div class="comp_setting">
+								<div id="cMenu" class="cShift">
+									<button class="button_cMenu" onclick="openInfo('game', 'game_menu', 'cMenu')"></button>
+								</div>
+								<div id="cLevel" class="cShift">
+									<button class="button_cLevel" onclick="openInfo('game', 'game_level', 'cLevel')"></button>
+								</div>
+								<div id="cSetting" class="cShift">
+									<button class="button_cSetting" onclick="openInfo('game', 'game_setting', 'cSetting')"></button>
+								</div>
+								<div id="cInfo" class="cShift">
+									<button class="button_cInfo" onclick="openInfo('game', 'game_info', 'cInfo')"></button>
+								</div>
+								<div id="cExit" class="cShift">		
+									<button class="button_cExit" onclick="openInfo('game', 'game_exit', 'cExit')"></button>
+								</div>
+							</div>
+						</div>
+			</div>
+		</div>
+		
+		<div id="pop_up_background" class="hide">	
+		</div>
+		<div id="pop_up" class="hide">
+			Press any key
+		</div>	
+	</body>
+	<script src="js/script.js"></script>
+	<script src="js/movement.js"></script>
+	<script src="js/settings.js"></script>
+	<script src="js/music.js"></script>
+</html>

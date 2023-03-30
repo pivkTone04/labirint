@@ -1,0 +1,466 @@
+*{
+    margin: 0;
+}
+body {
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden; /* Hide scrollbars */
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-color: black;
+    font-family: "Microsoft YaHei UI";
+}
+
+#upperTab{
+    height: 120px;
+    width: 100%;
+    display:grid;
+    place-items: center;
+
+    font-size: 50pt;
+    font-family: "Josefin Sans";
+    color: blue;
+    font-weight: bold;
+
+    /*background-color: orange;*/
+}
+
+#canvas{
+    background-color: lightblue;
+}
+
+#main{
+    height: 500px;
+    display:flex;
+}
+
+.centerIt{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#game{
+    z-index: 9;
+    overflow: hidden;
+}
+
+#settings, #score{
+    width: 200px;
+    /*background-color: white;*/
+    height: 100%;
+}
+
+.comp_setting{
+    width: 100px;
+    height: 500px;
+    /*background-color: rebeccapurple;*/
+}
+
+#cSetting, #cExit, #cMenu, #cLevel, #cInfo{
+    width: 100%;
+    height: 90px;
+    
+    display: grid;
+    place-items: center;
+    
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+    
+}
+
+.cShift{
+    position: relative;
+    right: 70px;
+    transition: 1.5s;
+    background-color: lightblue;
+}
+
+.button_cLevel{
+    background-image: url('../img/icons/level70x70.png');
+}
+
+.button_cMenu{
+    background-image: url('../img/icons/menu65x65.png');
+}
+
+.button_cSetting{
+    background-image: url('../img/icons/setting70x70.png');
+}
+
+.button_cExit{
+    background-image: url('../img/icons/exit65x65.png');
+}
+
+.button_cInfo{
+    background-image: url('../img/icons/info65x65.png');
+}
+
+.button_cSetting, .button_cExit, .button_cMenu, .button_cLevel, .button_cInfo{  /*gumbi*/
+    display: grid;
+    place-items: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    height: 70px;
+    width: 70px;
+    background-color: transparent;
+    border: none;
+    /*margin: 15px;*/
+}
+
+/*#cSetting:hover, #cExit:hover, #cMenu:hover, #cLevel:hover, #cInfo:hover{
+    right: 0px;
+    transition: 0.5s;
+}*/
+
+.cShift:hover{
+    right: 0px;
+    transition: 0.5s;
+}
+
+
+/*------Help me pls----------------*/
+#game_info, #game_exit, #game_setting, #game_level, #game_menu{
+    height: 100%;
+    width: 500px;
+    background-color: rgb(67, 142, 255);
+
+    z-index: 10;
+    overflow: hidden;
+}
+
+
+.close_button{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    /*background-color: red;*/
+    justify-content: right;
+    
+}
+.close_button_css{
+    opacity: 50%;
+    transition: 2s;
+    
+    height: 50px;
+    width: 50px;
+
+    display: grid;
+    place-items: center;
+    
+    background-image: url("../img/icons/close25x25.png");
+    background-position: center center;
+
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+}
+.close_button_css:hover{
+    opacity: 100%;
+    /*transition: 1s;*/
+    scale: 110%;
+}
+
+.info_of_setting, .exit_of_setting, .setting_of_setting, .level_of_setting, .menu_of_setting{
+    width: 100%;
+    height: 410px;
+    background-color: rgb(2, 183, 243);
+    background-image: url("../img/icons/info350x350_25op.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.info_of_setting{
+    background-image: url("../img/icons/info350x350_25op.png");
+}
+.exit_of_setting{
+    background-image: url("../img/icons/exit350x350_25op.png");
+}
+.setting_of_setting{
+    background-image: url("../img/icons/setting350x350_25op.png");
+}
+.level_of_setting{
+    background-image: url("../img/icons/level350x350_25op.png");
+}
+.menu_of_setting{
+    background-image: url("../img/icons/menu350x350_25op.png");
+}
+
+#volume_show{
+    margin-left: 10px;
+}
+
+/*JAVA SCRPIT SH*t */
+
+.show{
+    display: block;
+    
+}
+
+.hide{
+    display: none;
+    
+}
+
+.c_stay_there{
+    position: relative;
+    right: 0px;
+    transition: 0.5s;
+    background-color: rgb(2, 183, 243);
+}
+
+.sound_closed{
+    height: 0px;
+    transition: 0.2s;
+}
+
+.sound_open{
+    height: 100px;
+    transition: 0.2;
+}
+
+/*Settings Song stuf*/
+#sound{
+    overflow: hidden;
+    
+    width: 100%;
+    /*background-color: aqua;*/
+    background-image: url(../img/backgrounds/background_settings500x100op80.png);
+}
+
+
+.cSound{
+    width: 100%;
+    height: 50%;
+}
+
+.cSound_first{
+    /*background-color: white;*/
+}
+
+.cSound_second{
+   /* background-color: orange;*/
+}
+
+
+
+
+.title_of_setting{
+    width: 100%;
+    height: 90px;
+    /*background-color: aqua;*/
+    display: grid;
+    place-items: center;
+    font-size: 30pt;
+    font-weight: bold;
+
+    font-family: "Microsoft YaHei UI";
+    color: black;
+}
+
+
+.title_for_type_setting{
+    display: grid;
+    place-items: center;
+    width: 60%;
+    /*background-color: gray;*/
+    height: 30px;
+    font-size: 15px;
+    font-weight: italic;
+
+}
+
+.title_of_setting_flex{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    background-color: grey;
+}
+
+
+.both_sides_title{
+    width: 20%;
+    height: 100%;
+    /*background-color: red;*/
+
+    display: flex;
+    justify-content: right;
+    box-sizing: border-box;
+    padding-right: 3px;
+}
+
+.arrow{
+    display: grid;
+    place-items: center;
+    height: 29px;
+    width: 45px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    border:none;
+}
+.arrow:hover{
+    scale:90%;
+}
+
+.arrow_down{
+    background-image: url("../img/icons/arrow_down30x18.png");
+    scale: 80%;
+}
+.arrow_up{
+    background-image: url("../img/icons/arrow_up30x18.png");
+    scale: 80%;
+}
+
+
+.cSound_setting_split, .keybinds_split{
+    display: flex;
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+.cSound_setting_split_left, .keybinds_split_left{
+    font-size: 18pt;
+    font-family: "Josefin Sans";
+    /*background-color: aliceblue;*/
+    padding-right: 30px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: right;
+}
+
+.cSound_setting_split_right, .keybinds_split_right{
+    
+    
+    /*background-color: blueviolet;*/
+    display: flex;
+    align-items: center;
+
+    padding-left: 30px;
+    box-sizing: border-box;
+    
+}
+
+.setting_icons_button{
+    height: 45px;
+    width: 45px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    border-radius: 14%;
+    border: 1px solid black;
+
+    opacity: 50%;
+    transition: 1s;
+    
+}
+
+.keyHover{
+    opacity: 50%;
+}
+
+.setting_icons_button:hover, .keyHover:hover{
+    opacity: 100%;
+    transition: 0.5s; 
+    cursor:pointer;
+      
+}
+
+
+/*god help me*/
+.cMute_music_play{
+    background-image: url("../img/icons/mute-volume40x40.png");
+}
+.cMute_music_mute{
+    background-image: url("../img/icons/volume40x40.png");
+}
+
+#volume_music{
+
+}
+/*nevem lih cist*/ /*tu je ta slider*/
+.slider_css{
+    width: 100px;
+    /*-webkit-appearance: none;
+    
+
+    border-radius: 50%;
+     background: #ff4500;
+     cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;*/
+}
+
+
+/*css keybinds settings*/
+
+.keybinds_closed{
+    height:0px;
+    transition: 0.2s;
+}
+.keybinds_open{
+    height:200px;
+    transition: 0.2s;
+}
+
+#keybinds{
+    overflow: hidden;
+    width: 100%;
+   /* height: 200px;*/
+    /*background-color: plum;*/
+    background-image: url(../img/backgrounds/background_settings500x200op80.png);
+}
+
+.split_keybinds_onFour{
+    width: 100%;
+    height: 25%;
+}
+
+
+#keyPress_up, #keyPress_down, #keyPress_right, #keyPress_left{
+    height: 42px;
+    min-width: 42px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border: 1px solid black;
+    border-radius: 10%;
+
+    display: grid;
+    place-items: center;
+}
+
+
+/*reveal urself*/
+#pop_up{
+    /*display: grid;*/
+    place-items: center;
+    font-size: 18pt;
+
+    height: 100px;
+    width: 300px;
+    background-color: rgb(209, 209, 209);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+    z-index: 9999;
+    /*display: none;*/
+}
+
+#pop_up_background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 8888;
+    background-color: black;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 50%;
+    /*display: none;*/
+}
