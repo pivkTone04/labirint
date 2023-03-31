@@ -1,5 +1,5 @@
 document.getElementById("game").classList.replace("show", "hide")
-document.getElementById('game_setting').classList.replace("hide","show")
+document.getElementById('game_level').classList.replace("hide","show")
 
 let x=1;
 function openInfo(game, second_display, cInfo){
@@ -45,23 +45,63 @@ function close_setting(){
 	clear_all();
 	clear_all_side_tabs();
 }
-
+let c=0;
 let a=0;
 let b=0;
+let d=0;
 function open_sound(e){
-	//document.getElementById(e).classList.replace("sound_closed","sound_open")
 	document.getElementById(e).classList.toggle("sound_open")
 	
 	arrow_switchS();
 }
 
-function open_keybinds(e){
-	//document.getElementById(e).classList.replace("sound_closed","sound_open")
+function open_keybinds(e){	
 	document.getElementById(e).classList.toggle("keybinds_open")
 	
 	arrow_switchK();
 }
-//function()
+
+function open_level(e){
+	document.getElementById(e).classList.toggle("level_open")
+	
+	arrow_switchL();
+}
+
+function open_comming(e){
+	document.getElementById(e).classList.toggle("level_open")
+	
+	arrow_switchC();
+}
+
+
+
+function arrow_switchC(){
+	if(d==0){
+		document.getElementById("iArrowComming").classList.replace("arrow_down","arrow_up")
+		d=1
+	}
+	else{
+		document.getElementById("iArrowComming").classList.replace("arrow_up","arrow_down")
+		d=0
+	}
+}
+
+
+function arrow_switchL(){
+	if(c==0){
+		document.getElementById("iArrowLevel").classList.replace("arrow_down","arrow_up")
+		c=1
+	}
+	else{
+		document.getElementById("iArrowLevel").classList.replace("arrow_up","arrow_down")
+		c=0
+	}
+}
+
+
+
+
+
 
 function arrow_switchS(){
 	if(a==0){

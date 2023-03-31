@@ -34,10 +34,32 @@
 								<div class="title_of_setting"> 
 									Levels
 								</div>
+								
 								<div class="level_of_setting">
 									<div class="close_button">
 										<button class="close_button_css" onclick="close_setting()"></button>
 									</div>
+									<div class="title_of_setting_flex">
+										<div class="both_sides_title"></div>
+										<div class="title_for_type_setting"> Stage 1:</div>
+										<div class="both_sides_title"> <button id="iArrowLevel" class="arrow arrow_down" onclick="open_level('open_level_levels')"></button></div>
+									</div>
+									<div id="open_level_levels" class="level_settings_div level_closed">
+											<button id="level_one" class="level_button lvl_one margin_right"></button>
+											<button id="level_two" class="level_button lvl_locked"></button>
+											<button id="level_three" class="level_button lvl_locked margin_left"></button>
+									</div>
+
+									<div class="title_of_setting_flex">
+										<div class="both_sides_title"></div>
+										<div class="title_for_type_setting"> Stage 2:</div>
+										<div class="both_sides_title" > <button id="iArrowComming" class="arrow arrow_down" onclick="open_comming('open_level_comming')"></button></div>
+									</div>
+
+									<div id="open_level_comming" class="level_settings_div level_closed">
+											Comming Soon!
+									</div>
+
 
 								</div>
 							</div>
@@ -189,8 +211,10 @@
 			Press any key
 		</div>	
 	</body>
+	<script src="js/levels.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/movement.js"></script>
 	<script src="js/settings.js"></script>
 	<script src="js/music.js"></script>
+	
 </html>
